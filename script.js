@@ -20,18 +20,16 @@ function gameRound(playerSelection, computerSelection){
     return "You lose! " + computerSelection + " beats " + playerSelection;
 };
 
-// The results of each round have to be reported and updated at the end of each round, up until the match is over;
-// The match is composed of 5 rounds (ties are not counted); 
+// The game will be played until a score of 5 points is reached by either player;
 
 function playGame(){
     let playerScore = 0;
     let computerScore = 0;
-    for (let i = 0; i < 5; i++){
+    while((playerScore || computerScore) < 5){
         let computerChoice = getComputerChoice();
         let answer = prompt('Rock, paper or scissors? ').toLowerCase();
         if (!['rock', 'paper', 'scissors'].includes(answer)){
-            console.log('invalid choice, please make sure you have typed correctly!')
-            i--;
+            console.log('invalid choice, please make sure you have typed correctly!');
             continue;
         };
         console.log('your choice: ' + answer);
@@ -42,7 +40,6 @@ function playGame(){
         } else if (result.includes('You lose')) {
             computerScore++;
         };
-        console.log('Score after round ' + i + ": Player = " + playerScore + ", Computer: " + computerScore);
     };
     console.log('Final score:')
     console.log('Player: ' + playerScore);
