@@ -22,28 +22,43 @@ function gameRound(playerSelection, computerSelection){
 
 // The game will be played until a score of 5 points is reached by either player;
 
-function playGame(){
+function playGame(playerChoice){
     let playerScore = 0;
     let computerScore = 0;
-    while((playerScore || computerScore) < 5){
-        let computerChoice = getComputerChoice();
-        let answer = prompt('Rock, paper or scissors? ').toLowerCase();
-        if (!['rock', 'paper', 'scissors'].includes(answer)){
-            console.log('invalid choice, please make sure you have typed correctly!');
-            continue;
-        };
-        console.log('your choice: ' + answer);
-        console.log('computer\'s choice: ' + computerChoice);
-        let result = gameRound(answer, computerChoice);
-        if (result.includes('You win')) {
-            playerScore++;
-        } else if (result.includes('You lose')) {
-            computerScore++;
-        };
+
+   
+    let computerChoice = getComputerChoice();
+    if (!['rock', 'paper', 'scissors'].includes(playerChoice)){
+        console.log('invalid choice, please make sure you have typed correctly!');
     };
+    console.log('your choice: ' + playerChoice);
+    console.log('computer\'s choice: ' + computerChoice);
+    let result = gameRound(playerChoice, computerChoice);
+    if (result.includes('You win')) {
+        playerScore++;
+    } else if (result.includes('You lose')) {
+        computerScore++;
+    };
+
     console.log('Final score:')
     console.log('Player: ' + playerScore);
     console.log('Computer: ' + computerScore);
 }
 //start of the game
-playGame();
+
+// Event listener for button selection;
+const playerChoiceRock = document.querySelector(".rock");
+const playerChoicePaper = document.querySelector(".paper");
+const playerChoiceScissors = document.querySelector(".scissors");
+
+playerChoiceRock.addEventListener("click", () => {
+    playGame("rock");
+});
+
+playerChoicePaper.addEventListener("click", () => {
+    playGame("paper");
+});
+
+playerChoiceScissors.addEventListener("click", () => {
+    playGame("scissors");
+});
