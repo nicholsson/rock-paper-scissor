@@ -9,16 +9,19 @@ function getComputerChoice() {
     let choice = ["rock", "paper", "scissors"];
     return choice[randomInteger()];
 };
+<<<<<<< HEAD
 
 // Logic of one single round of Rock-Paper-Scissors;
 
+=======
+>>>>>>> 2516425707d700a5ff8a4d4b23bfe8b2d196a83f
 function gameRound(playerSelection, computerSelection){
     if (playerSelection === computerSelection) {
-        return "It's a tie!";
+        return "Tie";
     } else if ((playerSelection === 'rock' && computerSelection === 'scissors') || (playerSelection === 'scissors' && computerSelection === 'paper') || (playerSelection === 'paper' && computerSelection === 'rock')){
-            return "You win! " + playerSelection + " beats " + computerSelection; 
+            return "Win"; 
         };
-    return "You lose! " + computerSelection + " beats " + playerSelection;
+    return "Lose";
 };
 
 // The game will be played until a score of 5 points is reached by either player;
@@ -28,6 +31,7 @@ function gameRound(playerSelection, computerSelection){
 function playGame(){
     let playerScore = 0;
     let computerScore = 0;
+<<<<<<< HEAD
     let playerChoice = "";
 
     const playerChoiceContent = document.querySelector("#player-choice");
@@ -56,9 +60,15 @@ function playGame(){
         computerChoiceContent.textContent = "Computer choose: " + computerChoice;
         let result = gameRound(playerChoice, computerChoice);
         if (result.includes('You win')) {
+=======
+    // Display choices here
+    let result = gameRound(answer, computerChoice);
+    if (result.includes('Win')) {
+>>>>>>> 2516425707d700a5ff8a4d4b23bfe8b2d196a83f
             playerScore++;
-        } else if (result.includes('You lose')) {
+    } else if (result.includes('Lose')) {
             computerScore++;
+<<<<<<< HEAD
         };
         updateScores();
         checkWinner();       
@@ -81,3 +91,16 @@ function playGame(){
     };      
 };
 playGame();
+=======
+      };
+    // Display current score here
+
+
+    };
+    console.log('Final score:')
+    console.log('Player: ' + playerScore);
+    console.log('Computer: ' + computerScore);
+}
+//start of the game
+
+>>>>>>> 2516425707d700a5ff8a4d4b23bfe8b2d196a83f
