@@ -1,14 +1,73 @@
 *{
 	border-color: #5F9EA0;
+	font-family:"Press Start 2P", sans-serif;
 }
 
 body {
 	background-color: #264653;
 	border-style: solid;
 	color: #FFE4C4;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
 }
 
-div {
+#display-choices, #display-results, #match-results {
 	border-style: solid;
 	margin: 25px;
 }
+
+.title-container {
+	font-weight: bold;
+	font-size: 1.4em;
+	display: flex;
+}
+
+.title-container .title {
+	padding: 20px;
+	text-align: center;
+}	
+
+#container {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+	padding: 40px;
+}
+#rock, #paper, #scissors {
+	font-weight: bold;
+	font-size: 1.5em;
+	width: 250px;
+	height: 150px;
+	box-sizing: border-box;
+	margin: 15px;
+	border-style: dashed;
+	border-width: 10px;
+	background-color: #264653; 
+	color: #FFE4C4;
+}
+
+#container button:hover {
+	transform: scale(1.2);
+}
+#display-choices, #display-results {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+	padding: 20px;
+}
+
+#player-choice, #computer-choice, #player-score, #computer-score {
+	border-style: solid;
+	box-sizing: border-box;
+	width: 300px;
+	height: 90px;
+	text-align: center;
+	padding-top: 15px;
+}
+
+#match-results {
+	text-align: center;
+	font-size: 1.8em;
+}
+
