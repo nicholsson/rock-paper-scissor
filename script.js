@@ -9,16 +9,19 @@ function getComputerChoice() {
     let choice = ["rock", "paper", "scissors"];
     return choice[randomInteger()];
 };
+<<<<<<< HEAD
 
 // Logic of one single round of Rock-Paper-Scissors;
 
+=======
+>>>>>>> revision
 function gameRound(playerSelection, computerSelection){
     if (playerSelection === computerSelection) {
-        return "It's a tie!";
+        return "Tie";
     } else if ((playerSelection === 'rock' && computerSelection === 'scissors') || (playerSelection === 'scissors' && computerSelection === 'paper') || (playerSelection === 'paper' && computerSelection === 'rock')){
-            return "You win! " + playerSelection + " beats " + computerSelection; 
+            return "Win"; 
         };
-    return "You lose! " + computerSelection + " beats " + playerSelection;
+    return "Lose";
 };
 
 // The game will be played until a score of 5 points is reached by either player;
@@ -28,6 +31,7 @@ function gameRound(playerSelection, computerSelection){
 function playGame(){
     let playerScore = 0;
     let computerScore = 0;
+<<<<<<< HEAD
     let playerChoice = "";
 
     const playerChoiceContent = document.querySelector("#player-choice");
@@ -81,3 +85,29 @@ function playGame(){
     };      
 };
 playGame();
+    const playerChoiceContent = document.querySelector("#player-choice");
+    const computeChoiceContent = document.querySelector("#computer-choice");
+    const winner = document.querySelector("#match-results");
+    // Display choices here
+    const choices = document.querySelectorAll(".btn");
+    choices.forEach(choice => {choice.addEventListener("click", () => {const playerChoice = choice.dataset.choice; playRound(playerChoice)})});
+    function playRound(playerChoice) {
+        let computerChoice = getComputerChoice();
+	playerChoiceContent.textContent = "You Chose:" +  playerChoice;
+	computerChoiceContent.textContent = "Computer choose:" + computerChoice;
+	let result = gameRound(playerChoice, computerChoice);
+        if (result.includes('Win')) {
+                playerScore++;
+        } else if (result.includes('Lose')) {
+                computerScore++;};
+	updateScores();
+	checkWinner();
+    };
+    // current score here
+    function updateScores() {
+	const computerScores = document.querySelector("#computer-score");
+	const playerScores = document.querySelector("#player-score");
+	playerScores.textContent = playerScore;
+	computerScores.textContent = computerScore;
+    };
+};
