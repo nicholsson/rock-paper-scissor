@@ -6,7 +6,11 @@ function randomInteger(){
     return Math.floor(Math.random() * 3);
 };
 function getComputerChoice() {
+<<<<<<< HEAD
     let choice = ["rock", "paper", "scissors"];
+=======
+    let choice = ['Rock', 'Paper', 'Scissors'];
+>>>>>>> revision
     return choice[randomInteger()];
 };
 <<<<<<< HEAD
@@ -18,7 +22,7 @@ function getComputerChoice() {
 function gameRound(playerSelection, computerSelection){
     if (playerSelection === computerSelection) {
         return "Tie";
-    } else if ((playerSelection === 'rock' && computerSelection === 'scissors') || (playerSelection === 'scissors' && computerSelection === 'paper') || (playerSelection === 'paper' && computerSelection === 'rock')){
+    } else if ((playerSelection === 'Rock' && computerSelection === 'Scissors') || (playerSelection === 'Scissors' && computerSelection === 'Paper') || (playerSelection === 'Paper' && computerSelection === 'Rock')){
             return "Win"; 
         };
     return "Lose";
@@ -31,6 +35,7 @@ function gameRound(playerSelection, computerSelection){
 function playGame(){
     let playerScore = 0;
     let computerScore = 0;
+<<<<<<< HEAD
 <<<<<<< HEAD
     let playerChoice = "";
 
@@ -87,14 +92,19 @@ function playGame(){
 playGame();
     const playerChoiceContent = document.querySelector("#player-choice");
     const computeChoiceContent = document.querySelector("#computer-choice");
+=======
+    const playerChoiceContent = document.querySelector("#pchoice");
+    const computerChoiceContent = document.querySelector("#cchoice");
+>>>>>>> revision
     const winner = document.querySelector("#match-results");
     // Display choices here
     const choices = document.querySelectorAll(".btn");
+// add event listener to each button
     choices.forEach(choice => {choice.addEventListener("click", () => {const playerChoice = choice.dataset.choice; playRound(playerChoice)})});
     function playRound(playerChoice) {
         let computerChoice = getComputerChoice();
-	playerChoiceContent.textContent = "You Chose:" +  playerChoice;
-	computerChoiceContent.textContent = "Computer choose:" + computerChoice;
+	playerChoiceContent.textContent = playerChoice;
+	computerChoiceContent.textContent = computerChoice;
 	let result = gameRound(playerChoice, computerChoice);
         if (result.includes('Win')) {
                 playerScore++;
@@ -103,10 +113,10 @@ playGame();
 	updateScores();
 	checkWinner();
     };
-    // current score here
+    //Update the current score here
     function updateScores() {
-	const computerScores = document.querySelector("#computer-score");
-	const playerScores = document.querySelector("#player-score");
+	const computerScores = document.querySelector("#cscore");
+	const playerScores = document.querySelector("#pscore");
 	playerScores.textContent = playerScore;
 	computerScores.textContent = computerScore;
     };
