@@ -26,6 +26,8 @@ function gameRound(playerSelection, computerSelection){
 function playGame(){
     let playerScore = 0;
     let computerScore = 0;
+    const computerChoiceContent = document.querySelector("#cchoice");
+    const playerChoiceContent = document.querySelector("#pchoice");
     const winner = document.querySelector("#match-results");
     // Display choices here
     const choices = document.querySelectorAll(".btn");
@@ -33,9 +35,9 @@ function playGame(){
     choices.forEach(choice => {choice.addEventListener("click", () => {const playerChoice = choice.dataset.choice; playRound(playerChoice)})});
     function playRound(playerChoice) {
         let computerChoice = getComputerChoice();
-	playerChoiceContent.textContent = playerChoice;
-	computerChoiceContent.textContent = computerChoice;
-	let result = gameRound(playerChoice, computerChoice);
+	    playerChoiceContent.textContent = playerChoice;
+	    computerChoiceContent.textContent = computerChoice;
+	    let result = gameRound(playerChoice, computerChoice);
         if (result.includes('Win')) {
                 playerScore++;
         } else if (result.includes('Lose')) {
@@ -45,10 +47,17 @@ function playGame(){
     };
     //Update the current score here
     function updateScores() {
-	const computerScores = document.querySelector("#cscore");
-	const playerScores = document.querySelector("#pscore");
-	playerScores.textContent = playerScore;
-	computerScores.textContent = computerScore;
+	    const computerScores = document.querySelector("#cscore");
+	    const playerScores = document.querySelector("#pscore");
+	    playerScores.textContent = playerScore;
+	    computerScores.textContent = computerScore;
+    };
+    function checkWinner() {
+        if (playerScore >= 5){
+            winner.textContent = "You Won!";
+        } else if (computerScore >= 5){
+            winner.textContent = "Computer Won!";
+        }
     };
 };
 playGame();
