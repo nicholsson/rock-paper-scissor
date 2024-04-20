@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<head><!DOCTYPE html>
+
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -16,22 +16,22 @@
 		<h1 class = "title">Rock, paper, or scissors?</h1>
 	</div>
 	<div id = "container">
-		<button type = "button" class = "btn" id = "rock">Rock</button>
-		<button type = "button" class = "btn" id = "paper">Paper</button>
-		<button type = "button" class = "btn" id = "scissors">Scissors</button>
+		<button type = "button" class = "btn" id = "rock" data-choice = "Rock">Rock</button>
+		<button type = "button" class = "btn" id = "paper" data-choice = "Paper">Paper</button>
+		<button type = "button" class = "btn" id = "scissors" data-choice = "Scissors">Scissors</button>
 	</div>
 
 	<div id = "display-choices">
-		<div id = "player-choice">You chose: </div>
-		<div id = "computer-choice">Computer chose: </div>
+		<div id = "player-choice">You chose:<div id = "pchoice"></div></div>
+		<div id = "computer-choice">Computer chose:<div id = "cchoice"></div></div>
 	</div>
 
 	<div id = "display-results">
-		<div id = "player-score">Player score: </div>
-		<div id = "computer-score">Computer score: </div>
+		<div id = "player-score">Player score:<div id ="pscore"></div></div>
+		<div id = "computer-score">Computer score:<div id ="cscore"></div></div>
 	</div>
 
-	<div id = "match-results">Someone won!</div>
+	<div id = "match-results">Who will be the winner?</div>
     
 </body>
-</html></head>
+</html>

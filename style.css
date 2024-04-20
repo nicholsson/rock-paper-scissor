@@ -1,10 +1,10 @@
 *{
-	border-color: #5F9EA0;
 	font-family:"Press Start 2P", sans-serif;
 }
 
 body {
 	background-color: #264653;
+	border-color: #5F9EA0;
 	border-style: solid;
 	color: #FFE4C4;
 	display: flex;
@@ -12,8 +12,9 @@ body {
 	justify-content: space-around;
 }
 
-#display-choices, #display-results, #match-results {
+#display-choices, #display-results {
 	border-style: solid;
+	border-color: #5F9EA0;
 	margin: 25px;
 }
 
@@ -21,9 +22,10 @@ body {
 	font-weight: bold;
 	font-size: 1.4em;
 	display: flex;
+	justify-content: center;
 }
 
-.title-container .title {
+.title {
 	padding: 20px;
 	text-align: center;
 }	
@@ -35,6 +37,7 @@ body {
 	padding: 40px;
 }
 #rock, #paper, #scissors {
+	border-color: #5F9EA0;
 	font-weight: bold;
 	font-size: 1.5em;
 	width: 250px;
@@ -58,6 +61,7 @@ body {
 }
 
 #player-choice, #computer-choice, #player-score, #computer-score {
+	border-color: #5F9EA0;
 	border-style: solid;
 	box-sizing: border-box;
 	width: 300px;
