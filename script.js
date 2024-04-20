@@ -42,8 +42,8 @@ function playGame(){
                 playerScore++;
         } else if (result.includes('Lose')) {
                 computerScore++;};
-	updateScores();
-	checkWinner();
+	    updateScores();
+	    checkWinner();
     };
     //Update the current score here
     function updateScores() {
