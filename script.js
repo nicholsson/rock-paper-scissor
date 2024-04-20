@@ -51,3 +51,4 @@ function playGame(){
 	computerScores.textContent = computerScore;
     };
 };
+playGame();
